@@ -1,0 +1,27 @@
+<% flash.each do |message_type, message| %>
+<%= message %>
+<% end %>
+<div class="container">
+  <div class="row">
+    <%= render 'users/list', user:@user, book:@book %>
+    <div class="col-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>
+              <%= link_to user_path do %>
+              <%= image_tag @user.get_profile_image(100, 100) %><br>
+              <%= @user.name %>
+              <% end %>
+            </th>
+            <td><%= @hon.title %></td>
+            <td><%= @hon.body %></td>
+            <td><%= link_to "Edit", edit_book_path(@hon), class:"btn btn-sm btn-success" %></td>
+            <td><%= link_to "Destroy", book_path(@hon), method: :delete, "data-confirm" => "本当に消しますか？", class:"btn btn-sm btn-danger" %></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

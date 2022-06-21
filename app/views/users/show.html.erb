@@ -1,4 +1,10 @@
-<%= render partial: 'list' %>
+<% flash.each do |message_type, message| %>
+<%= message %>
+<% end %>
+<div class="container">
+  <div class="row">
+          <%= render 'list', book:@book, user:@user %>
+
         <div class="col-md-8 offset-md-1">
           <h2>Books</h2>
           <table class="table table-hover table-inverse">
@@ -10,10 +16,27 @@
               <th colspan="3"></th>
             </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+              <% @user.books.each do |hon| %>
+              <tr>
+              <td>
+                <%= link_to user_path(@user) do %>
+                <%= image_tag @user.get_profile_image(100, 100) %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to hon.title, book_path(hon) %>
+              </td>
+              <td>
+                <%= hon.body %>
+              </td>
+              </tr>
+              <% end %>
+            </tbody>
           </table>
+          
         </div>
+      </div>
     </div>
-  </div>
-</div>
+    
   
