@@ -1,7 +1,6 @@
 <div class="col-md-3">
-    
 <h2>User Info</h2>
-<%= image_tag @user.get_profile_image(100, 100) %>
+<%= image_tag user.get_profile_image(100, 100) %>
 
 <table class="table">
   <tbody>
@@ -15,10 +14,10 @@
     </tr>
   </tbody>
 </table>
-  <%= link_to edit_user_path(current_user), class:"btn btn-outline-secondary btn-block edit_user_path" do %> 
+  <%= link_to edit_user_path(user.id), class:"btn btn-outline-secondary btn-block edit_user_path" do %> 
     <i class="fas fa-user-cog"></i>
   <% end %>
-<h2>New Book</h2>
+<h2>New book</h2>
   <%= form_with model: book do |f| %>
   <label>Title</label><br>
   <%= f.text_field :title %><br>

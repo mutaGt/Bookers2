@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+.nav-barbrand{
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+  color: #fff;
+}
+
+h1{
+  font-size: 40px;
+}
+
+.row{
+  display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+li{
+  font-size:16px;
+  color: f8f9fa;
+}
